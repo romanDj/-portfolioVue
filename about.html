@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Обо мне</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png">
+    <script src="js/vue.min.js"></script>
+    <script src="js/vue-youtube-embed.umd.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+<div class="main">
+    <nav>
+        <div class="burger">
+            <img src="img/burger.png" @click="showNav = !showNav" alt="">
+        </div>
+
+
+            <template v-if="showNav">
+                <div class="menu">
+                    <div> <a href="index.html">Сделано</a></div>
+                    <div>  <a href="#" >Рил</a></div>
+                    <div>  <img src="img/logo.png" alt="#" class="logo"></div>
+                    <div>  <a href="#" class="select_menu">Обо мне</a> </div>
+                    <div><a href="#" >Писать</a></div>
+                </div>
+            </template>
+            <template v-else>
+                    <img src="img/logo.png" alt="#" class="logo">
+            </template>
+
+    </nav>
+
+    <div class="app">
+
+        <div class="about">
+
+            <div class="about_content">
+                <p>
+                    Приветы! Приветы!
+                </p>
+
+                <p class="bold">
+                    Меня зовут Дима. И я анимирую 2 года, рисую чуть-чуть больше, вечно в поиске. Да да да. Надеюсь, этот сайт мне поможет накопить на новый комп, чтобы я мог изучать Редшифт, а так же рисовать покадровую анимацию, то есть на синтик 24HD и прочие приблуды “профессионалов”.
+                </p>
+
+                <p>
+                    На данном сайте, есть категории, которыми я занимаюсь, но есть особенная ”ХУИ” в данную категорию попадают 3 типа работ:
+                </p>
+
+                <ul>
+                    <li>• от заказчика, который заебал до дрожи</li>
+                    <li>• работы, которые не прошли мой эмоциональный отбор, но кому-то они нравятся</li>
+                    <li>• и просто говно за которе заплатили хорошо</li>
+                </ul>
+
+                <p class="bold">
+                    П.С. Если хотите набить мне хлебало, пожалуйста, уточняйте адрес по почте, а то я в разъездах иногда
+                    бываю
+                </p>
+
+            </div>
+
+            <div class="colonka">
+
+                <div class="group">
+                    <h4>Контакты</h4>
+                    <a href="#">писать сюда</a>
+                    <a href="#">звонить сюда</a>
+                </div>
+
+                <div class="group">
+                    <a href="#">друзья живут тут</a>
+                    <a href="#">другие друзья</a>
+                    <a href="#">годнота</a>
+                </div>
+
+                <div class="group">
+                    <h4>Социум</h4>
+                    <a href="#">кантос</a>
+                    <a href="#">книжное лицо</a>
+                    <a href="#">приложение с фоточками</a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <p>All content copyright ©
+            <br>  or not</p>
+    </footer>
+</div>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

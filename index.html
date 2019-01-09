@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png">
+    <script src="js/vue.min.js"></script>
+    <script src="js/vue-youtube-embed.umd.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+
+    <div class="main">
+        <nav>
+            <div class="burger">
+                <img src="img/burger.png" @click="showNav = !showNav" alt="">
+            </div>
+            <img src="img/info.png" alt="#" @click="category_panel" class="help">
+            <template v-if="showNav">
+                <div class="menu">
+                    <div> <a href="index.html" class="select_menu">Сделано</a></div>
+                    <div>  <a href="#" >Рил</a></div>
+                    <div>  <img src="img/logo.png" alt="#" class="logo"></div>
+                    <div>  <a href="about.html" >Обо мне</a> </div>
+                    <div><a href="#" >Писать</a></div>
+                </div>
+            </template>
+            <template v-else>
+                <img src="img/logo.png" alt="#" class="logo">
+            </template>
+
+        </nav>
+
+        <div class="app">
+
+            <gallery :data_works="works"></gallery>
+
+            <transition name="category">
+                <category_panel  v-if="category_panel_visible"  :list_category="categories"></category_panel>
+            </transition>
+
+        </div>
+
+        <footer>
+            <p>All content copyright ©
+                <br>  or not</p>
+        </footer>
+
+        <transition name="visible" v-on:leave="leave"  v-on:enter="enterCancelled" v-on:after-leave="after_hide_presentation">
+            <div v-if="presentation" class="presentation_list">
+                <presentation_slider v-for="(item, index) in works" v-bind:key="item.id" :work="item" :number="index"></presentation_slider>
+            </div>
+        </transition>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
